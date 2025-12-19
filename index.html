@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Napi üzenet</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="card">
+      <div class="date" id="date"></div>
+      <div class="divider"></div>
+      <div class="message-container">
+        <p id="message" class="message pulse">
+          Kattints a gombra, hogy megkapd a mai üzeneted 🤭
+        </p>
+      </div>
+      <div class="btn-container">
+        <button id="btn">Mai üzenetem</button>
+      </div>
+      <small id="hint" class="hint"></small>
+    </div>
+  </div>
+
+  <script type="module" src="messageHandling.js"></script>
+</body>
+</html>
