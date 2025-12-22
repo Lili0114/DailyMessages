@@ -1,10 +1,17 @@
-import { messages } from "./messages.js";
+import { db } from "./firebaseConfig.js";
 
 const STORAGE = {
   used: "usedMessages",
   todayMsg: "todayMessage",
   todayDate: "todayDate"
 };
+
+let messages = [];
+
+async function loadMessages() {
+    const snapshot = await db.collection("data").get();
+    messages = snapshot.docs.map(doc => doc.data().message);
+}
 
 function formatDate(date = new Date()) {
   return date.toLocaleDateString("hu-HU", {
@@ -74,7 +81,7 @@ function showMessage(msg, alreadyHad) {
   document.getElementById('message').classList.remove('pulse');
   document.getElementById("message").innerText = msg;
   document.getElementById("hint").innerText = alreadyHad
-    ? "A mai üzenetet már megkaptad, gyere vissza holnap 😌"
+    ? "A mai üzenetet már megkaptad,\ngyere vissza holnap 😌"
     : "Holnap új üzenet vár 😘";
   document.getElementById("btn").disabled = true;
   
@@ -82,3 +89,5 @@ function showMessage(msg, alreadyHad) {
     createConfetti();
   }
 }
+
+loadMessages();

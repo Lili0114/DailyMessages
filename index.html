@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Napi üzenet</title>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,10 +21,11 @@
       <div class="btn-container">
         <button id="btn">Mai üzenetem</button>
       </div>
-      <small id="hint" class="hint"></small>
+      <div class="hint-container">
+        <small id="hint" class="hint"></small>
+      </div>
     </div>
   </div>
-
   <script type="module" src="messageHandling.js"></script>
 </body>
 </html>
