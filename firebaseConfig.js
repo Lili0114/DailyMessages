@@ -3,7 +3,6 @@
 
 // Your web app's Firebase configuration
 export const firebaseConfig = {
-    apiKey: "AIzaSyDj7452-Hry8F2YtAR2ZD4qCOqCqJHEoLM",
     authDomain: "dailymessages-f305a.firebaseapp.com",
     projectId: "dailymessages-f305a",
     storageBucket: "dailymessages-f305a.firebasestorage.app",
